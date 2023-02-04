@@ -10,7 +10,7 @@ function orderWalk()
      {  
         if(document.querySelector(".cat").className = "cat catWalking")
         {
-            document.querySelector(".cat").className = "cat";
+            document.querySelector(".cat").className = "cat catStanding";
         }
         requestAnimationFrame((time) => {
             requestAnimationFrame((time) => {
@@ -69,11 +69,30 @@ function orderGetUpAndWalk()
     });  
 }
 
+
 function orderRun()
+{
+    /* Jeżeli kot siedzi to tak jak w przypadku chodzenia musi najpierw wstać żeby biec*/
+    if(document.querySelector(".cat").className == "cat" || document.querySelector(".cat").className == "cat catSittingDown")
+    {
+        orderGetUpAndRun();
+    }
+    else
+    {
+        requestAnimationFrame((time) => {
+            requestAnimationFrame((time) => {
+                document.querySelector(".cat").className = "cat catRunning";
+            });
+        });  
+    }
+}
+
+
+function orderGetUpAndRun()
 {
     requestAnimationFrame((time) => {
         requestAnimationFrame((time) => {
-            document.querySelector(".cat").className = "cat catRunning";
+            document.querySelector(".cat").className = "cat catGettingUpAndRunning";
         });
     });  
 }

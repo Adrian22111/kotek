@@ -1,56 +1,102 @@
+/* <a href="https://www.freepik.com/free-vector/sunny-morning-green-forest-cartoon-landscape_31754774.htm#query=forest%20road%202d&position=4&from_view=search&track=ais">Image by upklyak</a> on Freepik */ 
 html
 {
     overflow-x:hidden;
 }
 body{
     overflow-x:hidden;
+    margin: 0;
+    padding: 0;
 }
-
+/* Poruszanie tłem żeby nadać wrażenie ruchu */
 #root
 {
     width:100%;
-    height:100%;
+    height:40vh;
     display:flex;
     flex-direction: column;
     align-items: center;
+    background: url(./img/landscape.jpg);
+    background-position: bottom left;
+    background-size: 100vw 100vh;
+    padding-bottom: 65px;
+    animation: backgroundWalking 15s linear infinite;
+}
+@keyframes backgroundWalking
+{
+    from
+    {
+        background-position: bottom right;
+    }
+
+    to
+    {
+        background-position: bottom left;
+    }
 }
 #orderWalk /* Przycisk chodzenie */
 {
     background-color: darkgray;
     font-size: 18px;
+    width: 100px;
+    display: inline-block;
+    margin: 0 auto 0;
     
 }
 #orderGetUp /* Przycisk siadanie*/
 {
     background-color: darkgray;
     font-size: 18px;
-    
+    width: 100px;
+    display: inline-block;
+    margin: 0 auto 0;
+
+
 }
 #orderSitDown /* Przycisk siadanie*/
 {
     background-color: darkgray;
     font-size: 18px;  
+    width: 100px;
+    display: inline-block;
+    margin: 0 auto 0;
+
 }
 #orderRun /* Przycisk siadanie*/
 {
     background-color: darkgray;
     font-size: 18px;  
+    width: 100px;
+    display: inline-block;
+    margin: 0 auto 0;
+    clear: both;
+}
+.buttonContainer
+{
+    margin: 0 auto 0 ;
+    text-align: center;
+
 }
 .containter
 {
     width: 100%;
+    margin-bottom: 50px;
 }
 .cat 
 {
     height: 200px; /* wysokość i szerokość pojedynczej klatki kotek.png*/
     width: 400px;
     margin: 100px auto 0;  
-    background: url("./img/kotek.png") 0 0  no-repeat; /* Podstawowa pozycja kota po załadowaniu */
+    background: url("./img/kotek.png") -400px -1000px  no-repeat; /* Podstawowa pozycja kota po załadowaniu */
+}
+.catStanding
+{
+    background: url("./img/kotek.png") 0 0  no-repeat;
 }
 
 .catWalking
 {
-    animation: catWalking 2s steps(12) 1;
+    animation: catWalking 1s steps(12) 1;
     background: url("./img/kotek.png") 0 0 no-repeat; /*sciezka/ wstepna pozycja/bez powtorzeń */
 
 }
@@ -71,7 +117,7 @@ body{
 /* sekcja animacji wstającego kota */
 .catGettingUp
 {
-    animation: catGettingUp 2s steps(6) 1;
+    animation: catGettingUp 0.5s steps(5) 1;
     background: url("./img/kotek.png") -400px -1000px no-repeat;
     animation-fill-mode: forwards;
 }
@@ -80,7 +126,7 @@ body{
 {
     from
     {
-        background-position: -400px -1200px;
+        background-position: -400px -1000px;
     }
 
     to
@@ -92,7 +138,7 @@ body{
 /* sekcja animacji siadającego kota */
 .catSittingDown
 {
-    animation: catSittingDown 2s steps(5) 1;
+    animation: catSittingDown 0.5s steps(5) 1;
     background: url("./img/kotek.png") -400px 0 no-repeat;
     animation-fill-mode: forwards;
 }
@@ -112,7 +158,7 @@ body{
 /* Kot wstający i idący*/
 .catGettingUpAndWalking
 {
-    animation: catGettingUp 2s steps(6) 1, catWalking 3s 2s steps(12) 1 ;
+    animation: catGettingUp 0.5s steps(5) 1, catWalking 1s 0.5s steps(12) 1 ;
     background: url("./img/kotek.png") -400px 0 no-repeat;
 
 }
@@ -121,9 +167,15 @@ body{
 
 .catRunning
 {
-    animation: catRunningPartOne 1s steps(12) 1, catRunningPartTwo 1s 1s steps(13) 1, catRunningPartThree 0.5s 2s steps(5) 1;
+    animation: catRunningPartOne 1s steps(12) 1, catRunningPartTwo 1s 1s steps(13) 1, catRunningPartThree 0.4s 2s steps(5) 1;
     background: url("./img/kotek.png") -800px 0 no-repeat;
 }
+.catGettingUpAndRunning
+{
+    animation: catGettingUp 0.5s steps(5) 1, catRunningPartOne 1s 0.5s steps(12) 1, catRunningPartTwo 1s 1.5s steps(13) 1, catRunningPartThree 0.4s 2.5s steps(5) 1;
+    background: url("./img/kotek.png") -800px 0 no-repeat;
+}
+
 @keyframes catRunningPartOne
 {
     from
