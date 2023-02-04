@@ -20,11 +20,21 @@ body{
     font-size: 18px;
     
 }
-#orderSit /* Przycisk siadanie*/
+#orderGetUp /* Przycisk siadanie*/
 {
     background-color: darkgray;
     font-size: 18px;
     
+}
+#orderSitDown /* Przycisk siadanie*/
+{
+    background-color: darkgray;
+    font-size: 18px;  
+}
+#orderRun /* Przycisk siadanie*/
+{
+    background-color: darkgray;
+    font-size: 18px;  
 }
 .containter
 {
@@ -35,14 +45,14 @@ body{
     height: 200px; /* wysokość i szerokość pojedynczej klatki kotek.png*/
     width: 400px;
     margin: 100px auto 0;  
-    background: url("./img/kotek.png") -400px -1000px no-repeat; /* Podstawowa pozycja kota po załadowaniu */
-
+    background: url("./img/kotek.png") 0 0  no-repeat; /* Podstawowa pozycja kota po załadowaniu */
 }
-/* sekcja animacji chodzącego kota */
+
 .catWalking
 {
     animation: catWalking 2s steps(12) 1;
     background: url("./img/kotek.png") 0 0 no-repeat; /*sciezka/ wstepna pozycja/bez powtorzeń */
+
 }
 
 @keyframes catWalking
@@ -58,22 +68,92 @@ body{
     }
 }
 
-/* sekcja animacji siadającego kota */
-.catSitting
+/* sekcja animacji wstającego kota */
+.catGettingUp
 {
-    animation: catSitting 2s steps(6) 1;
-    background: url("./img/kotek.png") 0 0 no-repeat;
+    animation: catGettingUp 2s steps(6) 1;
+    background: url("./img/kotek.png") -400px -1000px no-repeat;
+    animation-fill-mode: forwards;
 }
 
-@keyframes catSitting
+@keyframes catGettingUp
 {
     from
     {
-        background-position: -400px 0;
+        background-position: -400px -1200px;
     }
 
     to
     {
-        background-position: -400px -1200px;
+        background-position: -400px 0;
+    }
+}
+
+/* sekcja animacji siadającego kota */
+.catSittingDown
+{
+    animation: catSittingDown 2s steps(5) 1;
+    background: url("./img/kotek.png") -400px 0 no-repeat;
+    animation-fill-mode: forwards;
+}
+
+@keyframes catSittingDown
+{
+    from
+    {
+        background-position: -400px 0 ;
+    }
+    to
+    {
+        background-position: -400px -1000px;
+    }
+}
+
+/* Kot wstający i idący*/
+.catGettingUpAndWalking
+{
+    animation: catGettingUp 2s steps(6) 1, catWalking 3s 2s steps(12) 1 ;
+    background: url("./img/kotek.png") -400px 0 no-repeat;
+
+}
+
+/* Sekcja animacji biegnącego kota */
+
+.catRunning
+{
+    animation: catRunningPartOne 1s steps(12) 1, catRunningPartTwo 1s 1s steps(13) 1, catRunningPartThree 0.5s 2s steps(5) 1;
+    background: url("./img/kotek.png") -800px 0 no-repeat;
+}
+@keyframes catRunningPartOne
+{
+    from
+    {
+        background-position: -800px 0 ;
+    }
+    to
+    {
+        background-position: -800px -2391px;
+    }
+}
+@keyframes catRunningPartTwo
+{
+    from
+    {
+        background-position: -1200px 0 ;
+    }
+    to
+    {
+        background-position: -1200px -2591px;
+    }
+}
+@keyframes catRunningPartThree
+{
+    from
+    {
+        background-position: -1200px 0 ;
+    }
+    to
+    {
+        background-position: -1200px -1000px;
     }
 }

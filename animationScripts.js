@@ -1,21 +1,79 @@
 
 function orderWalk()
 {
-    document.querySelector(".cat").className = "cat";
-    requestAnimationFrame((time) => {
+      /* jeśli kot siedzi i chce wykonać animacje chodzenia to musi najpierw wstać*/
+     if( document.querySelector(".cat").className == "cat" || document.querySelector(".cat").className == "cat catSittingDown")
+     {
+         orderGetUpAndWalk();
+     }
+     else
+     {  
+        if(document.querySelector(".cat").className = "cat catWalking")
+        {
+            document.querySelector(".cat").className = "cat";
+        }
         requestAnimationFrame((time) => {
-            document.querySelector(".cat").className = "cat catWalking";
+            requestAnimationFrame((time) => {
+                document.querySelector(".cat").className = "cat catWalking";
+                
+            });
         });
-    });
+     }
+
 
 }
-function orderSit()
+
+function orderGetUp()
 {
-    document.querySelector(".cat").className = "cat";
+    /* Kotek może wstać tylko jeśli siedzi, jeżeli chodził albo już wstał to nie może wstać*/
+    if(document.querySelector(".cat").className == "cat" || document.querySelector(".cat").className == "cat catSittingDown"  )
+    {
+        requestAnimationFrame((time) => {
+            requestAnimationFrame((time) => {
+                document.querySelector(".cat").className = "cat catGettingUp";
+            });
+        });
+    }
+    else
+    {
+        
+    }
+
+
+    
+}
+function orderSitDown()
+{
+    /* Jeżeli kotek siedzi to nie może usiąść jeszcze raz*/
+    if(document.querySelector(".cat").className == "cat" || document.querySelector(".cat").className == "cat catSittingDown")
+    {
+
+    }
+    else
+    {
+        requestAnimationFrame((time) => {
+            requestAnimationFrame((time) => {
+                document.querySelector(".cat").className = "cat catSittingDown";
+            });
+        });  
+    }
+ 
+}
+
+function orderGetUpAndWalk()
+{
     requestAnimationFrame((time) => {
         requestAnimationFrame((time) => {
-            document.querySelector(".cat").className = "cat catSitting";
+            document.querySelector(".cat").className = "cat catGettingUpAndWalking";
         });
-    });
+    });  
+}
 
+function orderRun()
+{
+    requestAnimationFrame((time) => {
+        requestAnimationFrame((time) => {
+            document.querySelector(".cat").className = "cat catRunning";
+        });
+    });  
 }
