@@ -109,7 +109,7 @@ body{
     padding-top: 200px;
 
     background-position: bottom right; 
-    animation: backgroundWalking 5s 0.5s linear 1;  
+    animation: backgroundWalking 10s 0.5s linear 1;  
     animation-fill-mode: forwards;
 }
 .cat 
@@ -214,7 +214,7 @@ body{
 .catGettingUpAndRunning
 {
     /* catRunningPartOne 1s 0.5s steps(11) 5, catRunningPartTwo 1s 1.5s steps(13) 5, catRunningPartThree 0.4s 2.5s steps(5) 5 */
-    animation: catGettingUp 0.5s steps(5) 1 catRunning 1s steps(13) 2;
+    animation: catGettingUp 0.5s steps(5) 1, catRunning 1s 0.5s steps(13) 10;
     background: url("./img/kotek.png") -800px 0 no-repeat;
 }
 .catRunning
