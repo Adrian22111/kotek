@@ -164,7 +164,7 @@ footer a:active
     width:100%;
     background: url("./img/bg.jpg");
     padding-top: 200px;
-
+    background-repeat: no-repeat;
     background-position: bottom left;
     overflow-x:hidden ;
     background-position: bottom right;
@@ -176,7 +176,7 @@ footer a:active
     background: url("./img/bg.jpg");
     padding-top: 200px;
 
-    animation: backgroundWalking 15s linear 1;
+    animation: backgroundWalking 10s linear 1;
     background-position: bottom right;
     animation-fill-mode: forwards;
 }
@@ -187,7 +187,7 @@ footer a:active
     padding-top: 200px;
 
     background-position: bottom right; 
-    animation: backgroundWalking 15s 0.5s linear 1;  
+    animation: backgroundWalking 10s 0.5s linear 1;  
     animation-fill-mode: forwards;
 }
 .containerRun /* klasa do animacji tła biegania*/
@@ -196,7 +196,7 @@ footer a:active
     background: url("./img/bg.jpg");
     padding-top: 200px;
 
-    animation: backgroundWalking 10s linear 1;
+    animation: backgroundWalking 5s linear 1;
     background-position: bottom right;
     animation-fill-mode: forwards;
 }
@@ -207,7 +207,7 @@ footer a:active
     padding-top: 200px;
 
     background-position: bottom right; 
-    animation: backgroundWalking 10s 0.5s linear 1;  
+    animation: backgroundWalking 5s 0.5s linear 1;  
     animation-fill-mode: forwards;
 }
 .cat 
@@ -224,7 +224,7 @@ footer a:active
 
 .catWalking
 {
-    animation: catWalking 1s steps(12) 15;
+    animation: catWalking 1s steps(12) 10;
     background: url("./img/kotek.png") 0 0 no-repeat; /*sciezka/ wstepna pozycja/bez powtorzeń */
 
 }
@@ -232,18 +232,18 @@ footer a:active
 {
     0%
     {
-        background-position: bottom right;
+        background-position: bottom right 0px;
     }
 
     50%
     {
-        background-position: bottom center;
+        background-position: bottom right -1650px;
     }
     100%
     {
-        background-position: bottom left+210px;
+        background-position: bottom  right -3300px ;
     }
-
+    /* 210px */
 }
 
 @keyframes catWalking
@@ -303,7 +303,7 @@ footer a:active
 /* Kot wstający i idący*/
 .catGettingUpAndWalking
 {
-    animation: catGettingUp 0.5s steps(5) 1, catWalking 1s 0.5s steps(12) 15 ;
+    animation: catGettingUp 0.5s steps(5) 1, catWalking 1s 0.5s steps(12) 10 ;
     background: url("./img/kotek.png") -400px 0 no-repeat;
 
 }
@@ -312,13 +312,13 @@ footer a:active
 .catGettingUpAndRunning
 {
     /* catRunningPartOne 1s 0.5s steps(11) 5, catRunningPartTwo 1s 1.5s steps(13) 5, catRunningPartThree 0.4s 2.5s steps(5) 5 */
-    animation: catGettingUp 0.5s steps(5) 1, catRunning 1s 0.5s steps(13) 10;
+    animation: catGettingUp 0.5s steps(5) 1, catRunning 1s 0.5s steps(13) 5;
     background: url("./img/kotek.png") -800px 0 no-repeat;
 }
 .catRunning
 {
     /* animation: catRunningPartOne 1s  steps(11) 1, catRunningPartTwo 1s 1s steps(13) 1, catRunningPartThree 0.4s 2s steps(5) 1;  */
-    animation: catRunning 1s steps(13) 10; 
+    animation: catRunning 1s steps(13) 5; 
     background: url("./img/kotek.png") -800px 0 no-repeat;
 }
 
