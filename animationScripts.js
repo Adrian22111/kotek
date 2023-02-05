@@ -19,13 +19,17 @@ function disableButtonsForTime(firstButton,secondButton,thirdButton,time)
         document.getElementById(secondButton).disabled = false;
         document.getElementById(thirdButton).disabled = false;
         }, time);
+
 }
 function closeWindow()
 {
     document.getElementById("appDesc").style.opacity = 0;
-
     setTimeout(() => {
         document.getElementById("appDesc").style.display = "none";
+        }, 1000);
+    setTimeout(() => {
+        document.getElementById("buttonContainer").style.transition = "all 1s";
+        document.getElementById("buttonContainer").style.transform = "translateX(200px)";
         }, 1000);
 }
 
