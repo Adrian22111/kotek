@@ -1,3 +1,12 @@
+function requestAnimation(stringClassName,element)
+{
+    requestAnimationFrame((time) => {
+        requestAnimationFrame((time) => {
+            document.querySelector(element).className = stringClassName;
+            
+        });
+    });
+}
 
 function orderWalk()
 {
@@ -17,19 +26,9 @@ function orderWalk()
             document.querySelector(".container").className = "container";
         }
         /* "dodanie animacji" do tła, jeśli jest sama klasa container to nie ma ona animacji a dzięki jej resetowaniu powyżej można ją wykonywać wielokrotnie bez konieczności odświerzania */
-        requestAnimationFrame((time) => {
-            requestAnimationFrame((time) => {
-                document.querySelector(".container").className = "container containerWalk";
-                
-            });
-        });
+        requestAnimation("container containerWalk",".container");
         /* dodanie animacji do kota */
-        requestAnimationFrame((time) => {
-            requestAnimationFrame((time) => {
-                document.querySelector(".cat").className = "cat catWalking";
-                
-            });
-        });
+        requestAnimation("cat catWalking",".cat")
      }
 
 
@@ -44,11 +43,8 @@ function orderGetUp()
         {
             document.querySelector(".container").className = "container";
         }
-        requestAnimationFrame((time) => {
-            requestAnimationFrame((time) => {
-                document.querySelector(".cat").className = "cat catGettingUp";
-            });
-        });
+        requestAnimation("cat catGettingUp",".cat");
+
     }
     else
     {
@@ -71,11 +67,7 @@ function orderSitDown()
         {
             document.querySelector(".container").className = "container";
         }
-        requestAnimationFrame((time) => {
-            requestAnimationFrame((time) => {
-                document.querySelector(".cat").className = "cat catSittingDown";
-            });
-        });  
+        requestAnimation("cat catSittingDown",".cat");
     }
  
 }
@@ -87,17 +79,8 @@ function orderGetUpAndWalk()
         document.querySelector(".container").className = "container";
     }
     /* "dodanie animacji" do tła, jeśli jest sama klasa container to nie ma ona animacji a dzięki jej resetowaniu powyżej można ją wykonywać wielokrotnie bez konieczności odświerzania */
-    requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-            document.querySelector(".container").className = "container containerGetUpAndWalk";
-            
-        });
-    });
-    requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-            document.querySelector(".cat").className = "cat catGettingUpAndWalking";
-        });
-    });  
+    requestAnimation("container containerGetUpAndWalk",".container");
+    requestAnimation("cat catGettingUpAndWalking",".cat");
 }
 
 
@@ -114,25 +97,13 @@ function orderRun()
         {
             document.querySelector(".container").className = "container";
         }
-        requestAnimationFrame((time) => {
-            requestAnimationFrame((time) => {
-                document.querySelector(".container").className = "container containerRun";
-                
-            });
-        });
-        if(document.querySelector(".cat").className == "cat catRunning" )
+        requestAnimation("container containerRun",".container");
+        if(document.querySelector(".cat").className == "cat catRunning" ||document.querySelector(".cat").className == "cat catGettingUpAndRunning")
         {
             document.querySelector(".cat").className = "cat catStanding" 
         }
-
-
-            requestAnimationFrame((time) => {
-                requestAnimationFrame((time) => {
-                    document.querySelector(".cat").className = "cat catRunning";
-                });
-            }); 
-        
- 
+        requestAnimation("cat catRunning",".cat");
+    
     }
 }
 
@@ -144,15 +115,6 @@ function orderGetUpAndRun()
         document.querySelector(".container").className = "container";
     }
     /* "dodanie animacji" do tła, jeśli jest sama klasa container to nie ma ona animacji a dzięki jej resetowaniu powyżej można ją wykonywać wielokrotnie bez konieczności odświerzania */
-    requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-            document.querySelector(".container").className = "container containerGetUpAndRun";
-            
-        });
-    });
-    requestAnimationFrame((time) => {
-        requestAnimationFrame((time) => {
-            document.querySelector(".cat").className = "cat catGettingUpAndRunning";
-        });
-    });  
+    requestAnimation("container containerGetUpAndRun",".container");
+    requestAnimation("cat catGettingUpAndRunning",".cat");
 }
