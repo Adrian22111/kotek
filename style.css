@@ -1,4 +1,4 @@
-/* <a href="https://www.freepik.com/free-vector/sunny-morning-green-forest-cartoon-landscape_31754774.htm#query=forest%20road%202d&position=4&from_view=search&track=ais">Image by upklyak</a> on Freepik */ 
+ 
 html
 {
     overflow-x:hidden;
@@ -7,58 +7,156 @@ body{
     overflow-x:hidden;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url("./img/mainbg.jpg");
+
 }
+footer
+{
+    margin-top: auto;
+    text-align: center;  
+    border-top:  solid;
+    border-top-color: #015172;   
+    padding-bottom: 10px;
+}
+footer p 
+{
+    color: black;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 5px ;
+}
+footer a:link
+{
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px;
+}
+  
+footer a:visited 
+{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px;
+}
+  
+footer a:hover 
+{
+    color: gray;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px;
+}
+  
+footer a:active 
+{
+    color: gray;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px;
+}
+
 
 #root
 {
     width:100%;
     align-items: center;
-
-    
-
+}
+#header
+{
+    margin: 10px auto 10px;
+    text-align: center;
 }
 
 #orderWalk /* Przycisk chodzenie */
 {
-    background-color: darkgray;
+
     font-size: 18px;
     width: 100px;
     display: inline-block;
     margin: 0 auto 0;
-    
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;   
+    /* border-color: #015172;  */
+}
+#orderWalk:hover
+{
+    color:#EDD64A;
+    background:#015172;
+    cursor: pointer;
+    transform: translateX(-5px);
 }
 #orderGetUp /* Przycisk wstawanie*/
 {
-    background-color: darkgray;
     font-size: 18px;
     width: 100px;
     display: inline-block;
     margin: 0 auto 0;
-
-
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    /* border-color: #015172; */
+}
+#orderGetUp:hover
+{
+    color:#EDD64A;
+    background:#015172;
+    cursor: pointer;
+    transform: translateY(-5px);
 }
 #orderSitDown /* Przycisk siadanie*/
 {
-    background-color: darkgray;
+
     font-size: 18px;  
     width: 100px;
     display: inline-block;
-    margin: 0 auto 0;
-
+    margin: 5px auto 0;
+    border-radius: 5px;
+}
+#orderSitDown:hover
+{
+    color:#EDD64A;
+    background:#015172;
+    cursor: pointer;
+    transform: translateY(5px);
+    transition: all 0.2s ease-in-out;
 }
 #orderRun /* Przycisk bieg*/
 {
-    background-color: darkgray;
+
     font-size: 18px;  
     width: 100px;
     display: inline-block;
-    margin: 0 auto 0;
+    margin: 5px auto 0;
     clear: both;
+    border-radius: 5px;
 }
+#orderRun:hover
+{
+    color:#EDD64A;
+    background:#015172;
+    cursor: pointer;
+    transform: translateX(-10px);
+    transition: all 0.2s ease-in-out;
+}
+
+
+
 .buttonContainer /* divy przechowujące przyciski */
 {
-    margin: 0 auto 0 ;
+    width:220px;
+    margin: 50px auto 0 ;
     text-align: center;
+    padding: 20px;
+    border: 2px;
+    border-color: #015172;
+    border-style:solid ;
+    border-radius: 10px;
+
 
 }
 .container /* główny kontener */

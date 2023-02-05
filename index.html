@@ -6,21 +6,25 @@
         <title>Kotek</title>
     </head>
     <body>
-        <div id="root">
-            <h2>Kotek Fajny i Animowany</h2>
-            <div class="container">
-                <div class="cat"></div>
+        <header><h2 id="header">Kotek Fajny i Animowany</h2></header>
+        <main>
+            <div id="root">
+                <div class="container">
+                    <div class="cat"></div>
+                </div>
             </div>
-        </div>
-        <div class="buttonContainer">
-            <button id="orderWalk" onclick="orderWalk()">Chodzenie</button>
-            <button id="orderGetUp" onclick="orderGetUp()">Wstań</button>
-        </div>
-        <div class="buttonContainer">
-            <button id="orderRun" onclick="orderRun()">Biegnij</button>
-            <button id="orderSitDown" onclick="orderSitDown()">Usiądź</button>
-            <!-- <button id="orderGetUpAndWalk" onclick="orderGetUpAndWalk()">Wstań i idz</button> -->
-        </div>
+            <div class="buttonContainer">
+                <button id="orderWalk" onclick="orderWalk()">Spaceruj</button>
+                <button id="orderGetUp" onclick="orderGetUp()">Wstań</button>
+                <button id="orderRun" onclick="orderRun()">Biegnij</button>
+                <button id="orderSitDown" onclick="orderSitDown()">Usiądź</button>
+            </div>
+        </main>
+        <footer>
+            <p>Użyte grafiki</p>
+            <a href="https://www.freepik.com/premium-vector/city-night-day-illustration_829621.htm" target="_blank">Tło Animacji: Image  on Freepik</a>
+            <a href="https://www.freepik.com/free-vector/abstract-gray-bokeh-banner-elegant-style_7186234.htm#query=nice%20bright%20gray%20background&position=31&from_view=search&track=ais" target="_blank">Tło Aplikacji: Image by starline on Freepik</a>
+        </footer>
     </body>
 
     <script src="animationScripts.js">
