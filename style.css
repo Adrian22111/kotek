@@ -13,6 +13,7 @@ body{
     background: url("./img/mainbg.jpg");
 
 }
+/* stopka */
 footer
 {
     margin-top: auto;
@@ -71,6 +72,8 @@ footer a:active
 {
     margin: 10px auto 10px;
     text-align: center;
+    font-size: 50px;
+    color: #001A29;
 }
 
 #orderWalk /* Przycisk chodzenie */
@@ -87,7 +90,6 @@ footer a:active
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
 
-    /* border-color: #015172;  */
 }
 #orderWalk:hover
 {
@@ -178,7 +180,7 @@ footer a:active
 
 
 }
-#appDesc
+#appDesc /* opis dzialania*/
 {
     position: relative;
     display: inline-block;
@@ -196,7 +198,7 @@ footer a:active
     -ms-transition: opacity 1s;;
     -o-transition: opacity 1s;;
 }
-#underAnimationSection
+#underAnimationSection /* sekcja z przyciskami i opisem*/
 {
     margin: 0 auto 0;
     width:700px;
@@ -204,7 +206,7 @@ footer a:active
 
     
 }
-#ex
+#ex /* przycisk do zamykania*/
 {
     position: absolute;
     width: 20px;
@@ -218,7 +220,7 @@ footer a:active
 {
     cursor: pointer;
 }
-#xicon
+#xicon /* ikona przycisku zamknij*/
 {
     position: absolute;
     width: 20px;
@@ -249,7 +251,7 @@ footer a:active
     background-position: bottom right;
     animation-fill-mode: forwards;
 }
-.containerGetUpAndWalk
+.containerGetUpAndWalk /* klasa do animacji tla z przestojem na wstawanie*/
 {
     width:100%;
     background: url("./img/bg.jpg");
@@ -269,7 +271,7 @@ footer a:active
     background-position: bottom right;
     animation-fill-mode: forwards;
 }
-.containerGetUpAndRun
+.containerGetUpAndRun /* klasa do animacji tła biegania z przestojem na wstawanie*/
 {
     width:100%;
     background: url("./img/bg.jpg");
@@ -279,24 +281,25 @@ footer a:active
     animation: backgroundWalking 5s 0.5s linear 1;  
     animation-fill-mode: forwards;
 }
-.cat 
+.cat /* podstawowy kot pozycja wyjsciowa*/
 {
     height: 200px; /* wysokość i szerokość pojedynczej klatki kotek.png*/
     width: 400px;
     margin: 0 auto  0;  
     background: url("./img/kotek.png") -400px -1000px  no-repeat; /* Podstawowa pozycja kota po załadowaniu */
 }
-.catStanding
+.catStanding /* kot stojacy na potrzeby odtwarzania animacji kilka razy z rzędu*/
 {
     background: url("./img/kotek.png") 0 0  no-repeat;
 }
 
-.catWalking
+.catWalking /* klasa do animowania chodzenia*/
 {
     animation: catWalking 1s steps(12) 10;
     background: url("./img/kotek.png") 0 0 no-repeat; /*sciezka/ wstepna pozycja/bez powtorzeń */
 
 }
+/* animacja przemieszczania tla */
 @keyframes backgroundWalking
 {
     0%
@@ -314,7 +317,7 @@ footer a:active
     }
     /* 210px */
 }
-
+/* animacja chodzacego kota*/
 @keyframes catWalking
 {
     from
@@ -335,7 +338,7 @@ footer a:active
     background: url("./img/kotek.png") -400px -1000px no-repeat;
     animation-fill-mode: forwards;
 }
-
+/* animacja wstajacego kota */
 @keyframes catGettingUp
 {
     from
@@ -356,7 +359,7 @@ footer a:active
     background: url("./img/kotek.png") -400px 0 no-repeat;
     animation-fill-mode: forwards;
 }
-
+/* animacja wstajacego kota*/
 @keyframes catSittingDown
 {
     from
@@ -369,7 +372,7 @@ footer a:active
     }
 }
 
-/* Kot wstający i idący*/
+/* klasa do animowania kota wstajacego i idacego */
 .catGettingUpAndWalking
 {
     animation: catGettingUp 0.5s steps(5) 1, catWalking 1s 0.5s steps(12) 10 ;
@@ -377,20 +380,21 @@ footer a:active
 
 }
 
-/* Sekcja animacji biegnącego kota */
+/* klasa do animowania kota wstajacego i biegnacego */
 .catGettingUpAndRunning
 {
     /* catRunningPartOne 1s 0.5s steps(11) 5, catRunningPartTwo 1s 1.5s steps(13) 5, catRunningPartThree 0.4s 2.5s steps(5) 5 */
     animation: catGettingUp 0.5s steps(5) 1, catRunning 1s 0.5s steps(13) 5;
     background: url("./img/kotek.png") -800px 0 no-repeat;
 }
+/* klasa do animowania kota biegnacego */
 .catRunning
 {
     /* animation: catRunningPartOne 1s  steps(11) 1, catRunningPartTwo 1s 1s steps(13) 1, catRunningPartThree 0.4s 2s steps(5) 1;  */
     animation: catRunning 1s steps(13) 5; 
     background: url("./img/kotek.png") -800px 0 no-repeat;
 }
-
+/* animacja kota biegnacego */
 @keyframes catRunning
 {
     from

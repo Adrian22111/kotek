@@ -21,6 +21,7 @@ function disableButtonsForTime(firstButton,secondButton,thirdButton,time)
         }, time);
 
 }
+/* funkcja obslugujaca zamkniece opisu ukrywa opis i dodaje przejscie w prawo do przyciskow*/
 function closeWindow()
 {
     document.getElementById("appDesc").style.opacity = 0;
@@ -44,6 +45,7 @@ function orderWalk()
      }
      else
      {  
+        /* zostala wybrana opcja spaceru wiec dezaktywuje pozostale opcje na czas trwania animacji*/
         disableButtonsForTime("orderWalk","orderRun","orderSitDown",10000);
         if(document.querySelector(".cat").className = "cat catWalking") /* Jeśli kot wcześniej chodził to resetuje grafike kota do pozycji stojącej */ 
         {
@@ -66,9 +68,10 @@ function orderWalk()
 /* funckja obsługująca odtwarzanie animacji wstawania */
 function orderGetUp()
 {
+    /*  kot wstaje wiec wylaczamy mozliwosc wstawania i odblokowujemy mozliwosc siadania*/
     document.getElementById("orderGetUp").disabled = true;
     document.getElementById("orderSitDown").disabled = false;
-    // disableButtonsForTime("orderWalk","orderGetUp","orderRun","orderSitDown",500);
+
 
     /* Kotek może wstać tylko jeśli siedzi, jeżeli chodził albo już wstał to nie może wstać*/
     if(document.querySelector(".cat").className == "cat" || document.querySelector(".cat").className == "cat catSittingDown"  )
@@ -90,6 +93,7 @@ function orderSitDown()
     
     if(document.querySelector(".cat").className != "cat" || document.querySelector(".cat").className != "cat catSittingDown")
     {
+        /* kot siada wiec wylaczamy opcje siadania i wlaczamy opcje wstawania*/
         document.getElementById("orderSitDown").disabled = true;
         document.getElementById("orderGetUp").disabled = false;
         if(document.querySelector(".container").className = "container containerWalk")/* Jeśli kot wcześniej chodzi*/ 
@@ -104,6 +108,7 @@ function orderSitDown()
 /* funckja obsługująca odtwarzanie animacji wstawania i spaceru  */
 function orderGetUpAndWalk()
 {
+    /* wylaczamy przyciski na czas animacji*/
     disableButtonsForTime("orderWalk","orderRun","orderSitDown",10500);
     document.getElementById("orderGetUp").disabled = true;
     /* Jeśli kot wcześniej chodził  to resetuje tło do pozycji wyjściowej*/ 
@@ -127,13 +132,16 @@ function orderRun()
         orderGetUpAndRun();
     }
     else
-    {
+    {  
+        /* wylaczenie przyciskow na czas biegu */
         disableButtonsForTime("orderWalk","orderRun","orderSitDown",5000);
+        /* jesli kot biegal lub chodzil to reset tla */
         if(document.querySelector(".container").className = "container containerRun")
         {
             document.querySelector(".container").className = "container";
         }
         requestAnimation("container containerRun",".container");
+        /* jesli kot biegal to reset kota */
         if(document.querySelector(".cat").className == "cat catRunning" ||document.querySelector(".cat").className == "cat catGettingUpAndRunning")
         {
             document.querySelector(".cat").className = "cat catStanding" 
@@ -146,6 +154,7 @@ function orderRun()
 /* funckja obsługująca odtwarzanie animacji wstawania i biegu */
 function orderGetUpAndRun()
 {
+    /* wylaczenie przyciskow na czas animacji*/
     disableButtonsForTime("orderWalk","orderRun","orderSitDown",5500); 
     document.getElementById("orderGetUp").disabled = true;
     if(document.querySelector(".container").className = "container containerRun")/* Jeśli kot wcześniej chodził  to resetuje tło do pozycji wyjściowej*/ 
