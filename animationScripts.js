@@ -20,6 +20,14 @@ function disableButtonsForTime(firstButton,secondButton,thirdButton,time)
         document.getElementById(thirdButton).disabled = false;
         }, time);
 }
+function closeWindow()
+{
+    document.getElementById("appDesc").style.opacity = 0;
+
+    setTimeout(() => {
+        document.getElementById("appDesc").style.display = "none";
+        }, 1000);
+}
 
 /* funckja obsługująca odtwarzanie animacji spaceru */
 function orderWalk()

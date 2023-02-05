@@ -8,17 +8,32 @@
     <body>
         <header><h2 id="header">Kotek Fajny i Animowany</h2></header>
         <main>
-            <div id="root">
-                <div class="container">
-                    <div class="cat"></div>
+            <section>
+                <div id="root">
+                    <div class="container">
+                        <div class="cat"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="buttonContainer">
-                <button id="orderWalk" onclick="orderWalk()">Spaceruj</button>
-                <button id="orderGetUp" onclick="orderGetUp()">Wstań</button>
-                <button id="orderRun" onclick="orderRun()">Biegnij</button>
-                <button id="orderSitDown" onclick="orderSitDown()" disabled="true">Usiądź</button>
-            </div>
+            </section>
+            <section id="underAnimationSection">
+                <div class="buttonContainer">
+                    <button id="orderWalk" onclick="orderWalk()">Spaceruj</button>
+                    <button id="orderGetUp" onclick="orderGetUp()">Wstań</button>
+                    <button id="orderRun" onclick="orderRun()">Biegnij</button>
+                    <button id="orderSitDown" onclick="orderSitDown()" disabled="true">Usiądź</button>
+                </div>
+                <div id="appDesc">
+                    <button id="ex" onclick="closeWindow()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="xicon"class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>                          
+                    </button>
+                      
+                    Kotek może spacerować i biegać w mieście. Posiada opcje wstawania i siadania, jeśli siedzi i
+                    każemy mu iść bądź biec to kotek najpierw wstanie, jeśli kotek stoi to nie może wstać, a jeśli siedzi 
+                    to nie może usiąść. Ponadto jeśli biegnie bądź idzie nie można go rozpraszać kolejnymi komendami.
+                </div>
+            </section>
         </main>
         <footer>
             <p>Użyte grafiki</p>
